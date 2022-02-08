@@ -1,0 +1,18 @@
+<div class="mt-4 mb-4">
+    <h1 style="">Danh sách khóa học</h1>
+    <div class="row">
+        {{#each courses}}
+            <div class="col col-4">
+                <div class="card mt-4">
+                    <div class="card-img" style="background-image: url('{{this.img}}')"></div>
+                    {{!-- <img src="{{this.img}}" class="card-img-top" alt="..."> --}}
+                    <div class="card-body">
+                        <h5 class="card-title">{{this.name}}</h5>
+                        <p class="card-text text">{{this.description}}</p>
+                        <a href="/courses/{{this.slug}}" class="btn btn-primary">Học ngay</a>
+                    </div>
+                </div>
+            </div>
+        {{/each}}
+    </div>
+</div>

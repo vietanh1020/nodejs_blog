@@ -1,0 +1,55 @@
+<div class="create_form">
+    <h2 style="text-algin: center">THÊM KHÓA HỌC</h2>
+    <form method="POST" id='create_form' action="/courses/store">
+        <div class="form-group">
+            <label for="name">Tên Khóa học</label>
+            <input type="text" class="form-control" id="name" name="name">
+            <span class="form-message"></span>
+        </div>
+
+        <div class="form-group">
+            <label for="description">Mô tả Khóa học</label>
+            <input type="text" class="form-control" id="description" name="description" >
+            <span class="form-message"></span>
+        </div>
+
+         <div class="form-group">
+            <label for="img">Ảnh</label>
+            <input type="text" class="form-control" id="img" name="img" >
+            <span class="form-message"></span>
+        </div>
+        
+        <div class="form-group">
+            <label for="videoId">Video Id</label>
+            <input type="text" class="form-control" id="videoId" name="videoId" >
+            <span class="form-message"></span>
+        </div>
+        
+        <div class="form-group">
+            <label for="level">Trình độ</label>
+            <input type="text" class="form-control" id="level" name="level" >
+            <span class="form-message"></span>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Lưu</button>
+    </form>
+</div>
+
+<script>
+    // validate 
+    document.addEventListener("DOMContentLoaded", function() {
+        Validator({
+              form : '#create_form',
+              errorElement : '.form-message',
+              rules : [
+                  Validator.isRequired('#name'),
+                  Validator.isRequired('#description'),
+                  Validator.isRequired('#img'),
+                  Validator.isRequired('#videoId'),
+              ], 
+              callback : function(data){
+                console.log(data)
+              }
+          })
+    })
+</script>
